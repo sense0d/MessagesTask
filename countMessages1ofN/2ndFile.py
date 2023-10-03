@@ -124,23 +124,11 @@ textTest31 = [
     "animals", "and", "was", "indulged", "by", "my", "parents","with", "a", "great", "variety", "of", "pets",
     "with", "a", "great", "variety", "of", "pets","with", "a", "great", "variety", "of", "pets",
 ]
+
+# tests
 # countTextCharsLenght(text123)
 # countTextCharsLenght(textTest1)
 # countTextCharsLenght(textTest2)
+# countTextCharsLenght(textTest3)
 countTextCharsLenght(textTest31)
 
-
-
-def checkDevade(number):
-    result = number/129
-    print(result)
-    if isinstance(result, float):
-        intResult = int(result)
-        print(intResult+1)
-    else:
-        print('already int')
-
-#
-# number123 = 469
-#
-# checkDevade(number123)
