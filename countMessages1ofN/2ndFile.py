@@ -3,7 +3,8 @@ def countTextCharsLenght(text):
     if result:
         lengthText = len(text) - 1
         messagelength1 = 0
-        message1 = []
+        # message1 = []
+        messageStr = ''
         for word in text:
             # print(len(word))
             lengthText += len(word)
@@ -28,29 +29,31 @@ def countTextCharsLenght(text):
                     if messagelength1 < 127:
                         # print(word)
                         str = f'{word} '
-                        message1.append(str)
+                        messageStr += str
                         if i == len(text)-1:
                             messagelength1 = 0
                             str = f'Part {partof} of {parts}'
-                            message1.append(str)
-                            print(message1)
+                            messageStr += str
+                            print(messageStr)
                             partof += 1
                     else:
                         messagelength1 = 0
                         str = f'Part {partof} of {parts}'
-                        message1.append(str)
-                        print(message1)
+                        messageStr += str
+                        # print(messageStr)
+                        print(f'{messageStr} (lenght message is = {len(messageStr)})')
                         partof += 1
-                        message1.clear()
-                        message1.append(firstWordNextMessage)
+                        messageStr = ''
+                        messageStr += firstWordNextMessage
+                        messagelength1 += len(word) + 1
         elif lengthText > 1279:
             print('toolarge')
         else:
             print('small text')
             for word in text:
                 str = f'{word} '
-                message1.append(str)
-            print(message1)
+                messageStr += str
+            print(messageStr)
     else:
         print('this not array')
 
@@ -124,11 +127,23 @@ textTest31 = [
     "animals", "and", "was", "indulged", "by", "my", "parents","with", "a", "great", "variety", "of", "pets",
     "with", "a", "great", "variety", "of", "pets","with", "a", "great", "variety", "of", "pets",
 ]
-
-# tests
 # countTextCharsLenght(text123)
 # countTextCharsLenght(textTest1)
 # countTextCharsLenght(textTest2)
-# countTextCharsLenght(textTest3)
 countTextCharsLenght(textTest31)
 
+
+
+def checkDevade(number):
+    result = number/129
+    print(result)
+    if isinstance(result, float):
+        intResult = int(result)
+        print(intResult+1)
+    else:
+        print('already int')
+
+#
+# number123 = 469
+#
+# checkDevade(number123)
